@@ -22,6 +22,7 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+  text-align: center;
 }
 
 ol,
@@ -38,6 +39,8 @@ img {
   --primary-text-color: white;
   --primary-text-size: 1rem;
   --primary-text-shadow: 2px 2px 8px white;
+  --primary-font-family: Arial, Helvetica, sans-serif;
+  --secondary-text-color: black;
 }
 
 body {
@@ -53,7 +56,7 @@ body {
   justify-content: center;
   gap: 0.8rem;
   font-size: 1.8rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--primary-font-family);
   margin-top: 3rem;
   color: var(--primary-text-color);
   font-weight: bold;
@@ -63,4 +66,61 @@ body {
 .header > span {
   color: black;
   text-shadow: var(--primary-text-shadow);
+}
+
+.hero {
+  color: var(--primary-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: var(--primary-text-shadow);
+  font-family: var(--primary-font-family);
+  text-align: center;
+  height: 90vh;
+  font-size: 1.5rem;
+  padding-bottom: 30rem;
+  flex-grow: 1;
+}
+
+.hero-welcome > span {
+  color: var(--secondary-text-color);
+  font-weight: bold;
+}
+
+.hero-quote {
+  color: gray;
+  text-shadow: 2px 2px 4px black;
+  padding-top: 1rem;
+}
+
+input {
+  color: var(--primary-text-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  width: 25rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 2px solid black;
+  margin-top: 5rem;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: var(--primary-text-size);
+}
+
+.submit-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  position: relative;
+  right: 3rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+footer {
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  text-shadow: 4px 4px 4px black;
 }
