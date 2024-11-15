@@ -124,3 +124,76 @@ footer {
   font-family: var(--primary-font-family);
   text-shadow: 4px 4px 4px black;
 }
+
+.popup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main-container {
+  background-color: #008000;
+  z-index: 10;
+  width: 75vw;
+  height: 75vh;
+  display: flex;
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  text-shadow: var(--primary-text-shadow);
+}
+
+.overview-container {
+  background-image: url(./images/sky.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+}
+
+.overview-header-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.overview-header-container > p {
+  position: relative;
+  left: 37%;
+  font-family: var(--primary-font-family);
+  font-size: 1.5rem;
+}
+
+.overview-temperature-container {
+  position: relative;
+  top: 80%;
+  right: 60%;
+  height: 50px;
+  font-size: 6rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.today-container {
+  background-color: blue;
+  height: 75%;
+  width: 100%;
+}
+
+.forecast-container {
+  background-color: purple;
+  height: 25%;
+  width: 100%;
+}

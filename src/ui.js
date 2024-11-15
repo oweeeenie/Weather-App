@@ -1,10 +1,12 @@
 function weatherPopup() {
-  const weatherMainContainer = document.createElement('div'); // holds ALL 3 weather boxes
+  const weatherPopupWrapper = document.createElement('div');
+  weatherPopupWrapper.className = 'popup-wrapper';
 
-  function createWeatherContainer() {
-    weatherMainContainer.className = 'main-container';
-    document.appendChild(weatherMainContainer);
-  }
+  const weatherMainContainer = document.createElement('div');
+  weatherMainContainer.className = 'main-container';
+
+  weatherPopupWrapper.appendChild(weatherMainContainer);
+  document.body.appendChild(weatherPopupWrapper);
 
   function createWeatherOverview() {
     // entire overview box (left box)
@@ -21,7 +23,7 @@ function weatherPopup() {
     overviewLocation.textContent = 'Columbus, Ohio - United States Of America';
     overviewHeaderContainer.appendChild(overviewLocation);
 
-    let overviewTime = document.createElement('h2');
+    let overviewTime = document.createElement('p');
     overviewTime.className = 'overview-time';
     overviewTime.textContent = '20:00';
     overviewHeaderContainer.appendChild(overviewTime);
@@ -30,25 +32,30 @@ function weatherPopup() {
     overviewTemperatureContainer.className = 'overview-temperature-container';
     weatherOverviewContainer.appendChild(overviewTemperatureContainer);
 
-    let overviewTemperature = document.createElement('h1'); // goes bottom left with current temp
+    let overviewTemperature = document.createElement('p'); // goes bottom left with current temp
     overviewTemperature.className = 'overview-temperature';
     overviewTemperature.textContent = '30°c';
     overviewTemperatureContainer.appendChild(overviewTemperature);
   }
 
+  const leftColumnContainer = document.createElement('div');
+  leftColumnContainer.className = 'left-column';
+  weatherMainContainer.appendChild(leftColumnContainer);
+
   function createWeatherToday() {
     const weatherTodayContainer = document.createElement('div');
     weatherTodayContainer.className = 'today-container';
-    weatherMainContainer.appendChild(weatherTodayContainer);
+    leftColumnContainer.appendChild(weatherTodayContainer);
   }
 
   function createWeatherForecast() {
     const weatherForecastContainer = document.createElement('div');
     weatherForecastContainer.className = 'forecast-container';
-    weatherMainContainer.appendChild(weatherForecastContainer);
+    leftColumnContainer.appendChild(weatherForecastContainer);
   }
-  createWeatherContainer();
   createWeatherOverview();
   createWeatherToday();
   createWeatherForecast();
 }
+
+export { weatherPopup };
