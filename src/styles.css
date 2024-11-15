@@ -194,12 +194,6 @@ footer {
   gap: 3rem;
 }
 
-.forecast-container {
-  background-color: purple;
-  height: 35%;
-  width: 100%;
-}
-
 .today-header {
   display: flex;
   padding-left: 2rem;
@@ -272,4 +266,11 @@ footer {
   width: 35px;
   height: 30px;
   text-align: center;
+}
+
+/* start of forecast container */
+.forecast-container {
+  background-color: black;
+  height: 35%;
+  width: 100%;
 }
