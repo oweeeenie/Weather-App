@@ -126,9 +126,31 @@ function weatherPopup() {
   }
 
   function createWeatherForecast() {
-    const weatherForecastContainer = document.createElement('div');
-    weatherForecastContainer.className = 'forecast-container';
-    leftColumnContainer.appendChild(weatherForecastContainer);
+    // start of forecast
+    const forecastContainer = document.createElement('div');
+    forecastContainer.className = 'forecast-container';
+    leftColumnContainer.appendChild(forecastContainer);
+
+    const forecastTitle = document.createElement('p');
+    forecastTitle.className = 'forecast-title';
+    forecastTitle.textContent = 'Forecast for 5 days';
+    forecastContainer.appendChild(forecastTitle);
+
+    const forecastDays = [
+      { day: 'Wednesday', weather: 'Rain', temp: '9°C 5°C', icon: '🌧️' },
+      { day: 'Thursday', weather: 'Cloudy', temp: '10°C 8°C', icon: '☁️' },
+      { day: 'Friday', weather: 'Few Clouds', temp: '11°C 6°C', icon: '⛅' },
+      { day: 'Saturday', weather: 'Cloudy', temp: '13°C 5°C', icon: '☁️' },
+      { day: 'Sunday', weather: 'Cloudy', temp: '13°C 8°C', icon: '☁️' },
+    ];
+
+    const daysContainer = document.createElement('div');
+    daysContainer.className = 'days-container';
+
+    forecastDays.forEach((day) => {
+      const dayBox = document.createElement('div');
+      dayBox.className = 'day-box';
+    });
   }
   createWeatherOverview();
   createWeatherToday();
