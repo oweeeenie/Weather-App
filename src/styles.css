@@ -43,20 +43,22 @@ img {
   --secondary-text-color: black;
 }
 
+/* Body Background */
 body {
   background-image: url(./images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family: var(--primary-font-family);
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
   font-size: 1.8rem;
-  font-family: var(--primary-font-family);
   margin-top: 3rem;
   color: var(--primary-text-color);
   font-weight: bold;
@@ -68,63 +70,7 @@ body {
   text-shadow: var(--primary-text-shadow);
 }
 
-.hero {
-  color: var(--primary-text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-shadow: var(--primary-text-shadow);
-  font-family: var(--primary-font-family);
-  text-align: center;
-  height: 90vh;
-  font-size: 1.5rem;
-  padding-bottom: 30rem;
-  flex-grow: 1;
-}
-
-.hero-welcome > span {
-  color: var(--secondary-text-color);
-  font-weight: bold;
-}
-
-.hero-quote {
-  color: gray;
-  text-shadow: 2px 2px 4px black;
-  padding-top: 1rem;
-}
-
-input {
-  color: var(--primary-text-color);
-  border-radius: 0.5rem;
-  width: 100%;
-  width: 25rem;
-  height: 4rem;
-  background-color: transparent;
-  border: 2px solid black;
-  margin-top: 5rem;
-  padding: 1rem;
-  font-weight: bold;
-  font-size: var(--primary-text-size);
-}
-
-.submit-btn {
-  background-color: transparent;
-  border: none;
-  color: var(--primary-text-color);
-  font-size: 1rem;
-  position: relative;
-  right: 3rem;
-  z-index: 10;
-  cursor: pointer;
-}
-
-footer {
-  color: var(--primary-text-color);
-  font-family: var(--primary-font-family);
-  text-shadow: 4px 4px 4px black;
-}
-
+/* Main Container (Pop-up) */
 .popup-wrapper {
   display: flex;
   justify-content: center;
@@ -138,156 +84,102 @@ footer {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Flex Container for Weather Overview and Forecast */
 .main-container {
+  display: flex;
+  width: 75vw; /* Main container size */
+  height: 75vh; /* Main container height */
   background-color: black;
   z-index: 9999;
-  width: 75vw;
-  height: 75vh;
-  display: flex;
   color: var(--primary-text-color);
   font-family: var(--primary-font-family);
   text-shadow: var(--primary-text-shadow);
 }
 
-.overview-container {
-  background-image: url(./images/sky.jpg);
-  background-size: cover;
-  height: 100%;
-  width: 50%;
-  padding: 2rem;
-  display: flex;
-}
-
-.overview-header-container {
-  display: flex;
-  justify-content: end;
-  width: 70%;
-}
-
-.overview-header-container > p {
-  position: relative;
-  left: 37%;
-  font-family: var(--primary-font-family);
-  font-size: 1.5rem;
-}
-
-.overview-temperature-container {
-  position: relative;
-  top: 80%;
-  right: 60%;
-  height: 50px;
-  font-size: 6rem;
-}
-
+/* Left Column (Overview and Forecast) */
 .left-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 50%;
+  width: 65%; /* 65% of the width */
+  padding: 2rem;
+  justify-content: space-between;
 }
 
-.today-container {
-  height: 65%;
-  width: 100%;
+/* Right Column (Background Image and Details) */
+.right-column {
+  background-image: url(./images/sky.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 35%; /* 35% of the width */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  justify-content: flex-start;
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  text-shadow: var(--primary-text-shadow);
+}
+
+/* Overview Section (Today’s Weather) */
+.today-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1;
 }
 
 .today-header {
-  display: flex;
-  padding-left: 2rem;
-  padding-top: 2rem;
   font-style: italic;
   font-family: cursive;
-}
-
-.row-one-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  padding-left: 2rem;
-  border-bottom: 1px solid white;
-  font-family: cursive;
-}
-
-.row-two-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  padding-left: 2rem;
-  border-bottom: 1px solid white;
-  font-family: cursive;
-}
-
-.row-three-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  padding-left: 2rem;
-  border-bottom: 1px solid white;
-  font-family: cursive;
-}
-
-.row-four-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  padding-left: 2rem;
-  border-bottom: 1px solid white;
-  font-family: cursive;
-}
-
-.row-five-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  padding-left: 2rem;
-  border-bottom: 1px solid white;
-  font-family: cursive;
-}
-
-.row-one-value,
-.row-two-value,
-.row-three-value,
-.row-four-value,
-.row-five-value {
-  position: relative;
-  right: 20px;
+  font-size: 1.5rem;
   color: var(--primary-text-color);
 }
 
-.today-container .fa-solid,
-.fa-regular {
-  font-size: 2rem;
-  color: var(--secondary-text-color);
-  text-shadow: var(--primary-text-shadow);
-  vertical-align: middle;
-  width: 35px;
-  height: 30px;
-  text-align: center;
+.today-temperature {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-/* start of forecast container */
+/* Forecast Section */
 .forecast-container {
-  background-color: black;
-  height: 35%;
-  width: 100%;
-}
-
-.days-container {
   display: flex;
-  justify-content: space-evenly;
-  height: 100%;
-  align-items: center;
-  font-size: 1.3rem;
-  padding-bottom: 60px;
-}
-
-.weather-icon {
-  font-size: 50px;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
 }
 
 .forecast-title {
-  padding-top: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.forecast-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.forecast-day .weather-icon {
+  font-size: 2rem;
+}
+
+.forecast-day .temperature-range {
+  font-size: 1.2rem;
+}
+
+/* Small Details in Right Column */
+.right-column .details {
+  margin-top: auto;
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+}
+
+.right-column .details p {
+  margin-bottom: 1rem;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
 }
