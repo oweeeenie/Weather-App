@@ -274,3 +274,20 @@ footer {
   height: 35%;
   width: 100%;
 }
+
+.days-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+  font-size: 1.3rem;
+  padding-bottom: 60px;
+}
+
+.weather-icon {
+  font-size: 50px;
+}
+
+.forecast-title {
+  padding-top: 10px;
+}

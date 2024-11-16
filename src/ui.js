@@ -150,7 +150,32 @@ function weatherPopup() {
     forecastDays.forEach((day) => {
       const dayBox = document.createElement('div');
       dayBox.className = 'day-box';
+
+      const dayName = document.createElement('div');
+      dayName.className = 'day-name';
+      dayName.textContent = day.day;
+
+      const weatherIcon = document.createElement('div');
+      weatherIcon.className = 'weather-icon';
+      weatherIcon.textContent = day.icon;
+
+      const weatherDescription = document.createElement('div');
+      weatherDescription.className = 'weather-description';
+      weatherDescription.textContent = day.weather;
+
+      const weatherTemperature = document.createElement('div');
+      weatherTemperature.className = 'weather-temperature';
+      weatherTemperature.textContent = day.temp;
+
+      dayBox.appendChild(dayName);
+      dayBox.appendChild(weatherIcon);
+      dayBox.append(weatherDescription);
+      dayBox.append(weatherTemperature);
+
+      daysContainer.appendChild(dayBox);
     });
+    forecastContainer.appendChild(daysContainer);
+    leftColumnContainer.appendChild(forecastContainer);
   }
   createWeatherOverview();
   createWeatherToday();
